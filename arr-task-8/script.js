@@ -48,6 +48,7 @@ table+="</table>"
 }
 function update(){
     var sel=document.getElementById("sel").value;
+    console.log(sel);
     var quantity=document.getElementById("quantity").value;
 
     if(sel="samsung"){
@@ -55,6 +56,7 @@ function update(){
     }
     else if(sel="nokia"){
         arr[1].quantity=quantity
+        console.log(arr[1].quantity);
     }
     else if(sel="xiaomi"){
         arr[2].quantity=quantity
