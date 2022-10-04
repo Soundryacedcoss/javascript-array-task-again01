@@ -21,8 +21,12 @@ var price=document.getElementById("price").value;
     }
     arr1.push(list)
     console.log(arr1)
-if(Company==Company){
-    var table="<table><th>Companny</th><th>Model</th><th>Memory</th><th>price</th></tr>"
+if(!isNaN(Company)){
+  document.getElementById("p1").innerHTML="plss Enter comapny name in string.";
+}
+else{
+  
+  var table="<table><th>Companny</th><th>Model</th><th>Memory</th><th>price</th></tr>"
        arr1.forEach(element => {
         table+="<tr><td>"+
         element.name+
@@ -36,8 +40,5 @@ if(Company==Company){
   });
   table+="</table>"
   document.getElementById("p1").innerHTML=table;
-}
-else{
-  document.getElementById("p1").innerHTML="plss";
 }
 }
