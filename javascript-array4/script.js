@@ -21,10 +21,9 @@ var price=document.getElementById("price").value;
     }
     arr1.push(list)
     console.log(arr1)
-
-  
-  var table="<table><th>Companny</th><th>Model</th><th>Memory</th><th>price</th></tr>"
-  arr1.forEach(element => {
+if(Company==Company){
+    var table="<table><th>Companny</th><th>Model</th><th>Memory</th><th>price</th></tr>"
+       arr1.forEach(element => {
         table+="<tr><td>"+
         element.name+
         "</td><td>"+
@@ -37,4 +36,8 @@ var price=document.getElementById("price").value;
   });
   table+="</table>"
   document.getElementById("p1").innerHTML=table;
+}
+else{
+  document.getElementById("p1").innerHTML="plss";
+}
 }
