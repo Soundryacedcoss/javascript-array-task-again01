@@ -68,24 +68,47 @@ function data() {
 }
 
 function cart() {
-    
-  if ((arr[0].name = "samsung" && d1.checked)) {
+  if(d1.checked && d2.checked && d3.checked && d4.checked && d5.checked){
+    alert("Plese select only one item")
+  }
+  else if(d1.checked && d2.checked && d3.checked && d4.checked){
+    alert("Plese select only one item")
+  }
+  else if(d1.checked && d2.checked && d3.checked){
+    alert("Plese select only one item")
+  }
+  else if(d1.checked && d2.checked){
+    alert("Plese select only one item")
+  }
+  else if(d1.checked && d3.checked){
+    alert("Plese select only one item")
+  }
+  else if(d1.checked && d4.checked){
+    alert("Plese select only one item")
+  }
+  else if(d1.checked && d5.checked){
+    alert("Plese select only one item")
+  }
+  else if ((arr[0].name == "samsung" && d1.checked)) {
     arr[0].quantity = arr[0].quantity - 1;
     display();
-  } else if ((arr[1].name = "nokia" && d2.checked)) {
+  } else if ((arr[1].name == "nokia" && d2.checked)) {
     arr[1].quantity = arr[1].quantity - 1;
     display();
-  } else if ((arr[2].name = "xiomi" && d3.checked)) {
+  } else if ((arr[2].name == "xiomi" && d3.checked)) {
     arr[2].quantity = arr[2].quantity - 1;
     display();
-  } else if ((arr[3].name = "apple" && d4.checked)) {
+  } else if ((arr[3].name == "apple" && d4.checked)) {
     arr[3].quantity = arr[3].quantity - 1;
     display();
-  } else if ((arr[4].name = "moto" && d5.checked)) {
+  } else if ((arr[4].name == "moto" && d5.checked)) {
     arr[4].quantity = arr[4].quantity - 1;
     display();
   }
 }
+ 
+
+
 function display(){
  var table2="<table><tr><th>Company</th><th>Model</th><th>Memory</th><th>price</th><th>Quantity</th></tr>";
  arr.forEach(element => {
