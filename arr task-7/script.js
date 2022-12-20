@@ -1,19 +1,17 @@
 var data1 = {
-  name: "samsung",
+  name: "Samsung",
   model: "Galaxy",
   memory: 32,
   price: 15000,
   quantity: 20,
-  chk: "<input type='checkbox' id='d1'>",
 };
 
 var data2 = {
-  name: "nokia",
+  name: "Nokia",
   model: "S07",
   memory: 64,
   price: 22000,
   quantity: 15,
-  chk: "<input type='checkbox' id='d2'>",
 };
 
 var data3 = {
@@ -22,31 +20,27 @@ var data3 = {
   memory: 128,
   price: 12000,
   quantity: 21,
-  chk: "<input type='checkbox' id='d3'>",
 };
 
 var data4 = {
-  name: "apple",
+  name: "Apple",
   model: "s01",
   memory: 64,
   price: 2500,
   quantity: 13,
-  chk: "<input type='checkbox' id='d4'>",
 };
 
 var data5 = {
-  name: "motorola",
+  name: "Moto",
   model: "s01",
   memory: 64,
   price: 15000,
   quantity: 18,
-  chk: "<input type='checkbox' id='d5'>",
 };
 var arr = [data1, data2, data3, data4, data5];
-console.log(arr);
 function data() {
   table =
-    "<table><tr><th>Companny</th><th>Model</th><th>Memory</th><th>price</th><th>Quantity</th><th>Cart</th></tr>";
+    "<table><tr><th>Companny</th><th>Model</th><th>Memory</th><th>price</th><th>Quantity</th></tr>";
   arr.forEach((element) => {
     table +=
       "<tr><td>" +
@@ -59,72 +53,53 @@ function data() {
       element.price +
       "</td><td>" +
       element.quantity +
-      "</td><td>" +
-      element.chk +
       "</td></tr>";
   });
   table += "</table>";
   document.getElementById("p1").innerHTML = table;
 }
-
 function cart() {
-  if(d1.checked && d2.checked && d3.checked && d4.checked && d5.checked){
-    alert("Plese select only one item")
-  }
-  else if(d1.checked && d2.checked && d3.checked && d4.checked){
-    alert("Plese select only one item")
-  }
-  else if(d1.checked && d2.checked && d3.checked){
-    alert("Plese select only one item")
-  }
-  else if(d1.checked && d2.checked){
-    alert("Plese select only one item")
-  }
-  else if(d1.checked && d3.checked){
-    alert("Plese select only one item")
-  }
-  else if(d1.checked && d4.checked){
-    alert("Plese select only one item")
-  }
-  else if(d1.checked && d5.checked){
-    alert("Plese select only one item")
-  }
-  else if ((arr[0].name == "samsung" && d1.checked)) {
-    arr[0].quantity = arr[0].quantity - 1;
+  var input = document.getElementById("input").value;
+  var dropdown = document.getElementById("dropdown").value;
+  if (input === "") {
+    alert("Please enter no of quantity");
+  } else if (dropdown == "Samsung") {
+    arr[0].quantity = input;
     display();
-  } else if ((arr[1].name == "nokia" && d2.checked)) {
-    arr[1].quantity = arr[1].quantity - 1;
+  } else if (dropdown == "Nokia") {
+    arr[1].quantity = input;
     display();
-  } else if ((arr[2].name == "xiomi" && d3.checked)) {
-    arr[2].quantity = arr[2].quantity - 1;
+  } else if (dropdown == "Xiomi") {
+    arr[2].quantity = input;
     display();
-  } else if ((arr[3].name == "apple" && d4.checked)) {
-    arr[3].quantity = arr[3].quantity - 1;
+  } else if (dropdown == "Apple") {
+    arr[3].quantity = input;
     display();
-  } else if ((arr[4].name == "moto" && d5.checked)) {
-    arr[4].quantity = arr[4].quantity - 1;
+  } else if (dropdown == "Moto") {
+    arr[4].quantity = input;
     display();
   }
 }
- 
 
+function display() {
+  var input = document.getElementById("input").value;
+  var table2 =
+    "<table><tr><th>Company</th><th>Model</th><th>Memory</th><th>price</th><th>Quantity</th></tr>";
+  arr.forEach((element) => {
+    table2 +=
+      "<tr><td>" +
+      element.name +
+      "</td><td>" +
+      element.model +
+      "</td><td>" +
+      element.memory +
+      "</td><td>" +
+      element.price +
+      "</td><td>" +
+      element.quantity +
+      "</td></tr>";
+  });
 
-function display(){
- var table2="<table><tr><th>Company</th><th>Model</th><th>Memory</th><th>price</th><th>Quantity</th></tr>";
- arr.forEach(element => {
-    table2+="<tr><td>"+
-    element.name+
-    "</td><td>"+
-    element.model+
-    "</td><td>"+
-    element.memory+
-    "</td><td>"+
-    element.price+
-    "</td><td>"+
-    element.quantity+
-    "</td></tr>"
- });
-   
-   table2+="</table>";
-   document.getElementById("res").innerHTML=table2;
+  table2 += "</table>";
+  document.getElementById("res").innerHTML = table2;
 }
